@@ -6,25 +6,37 @@ namespace LerLarguraAlturaRetangulo
 {
     class Retangulo
     {
-        public static double Largura;
-        public static double Altura;
+        public  double Largura;
+        public  double Altura;
 
-        public static double CalcularArea(Retangulo Retangulo)
+        public Retangulo (double largura, double altura)
         {
-            double Area = (Retangulo.Largura * Retangulo.Altura);
+            Largura = largura;
+            Altura = altura;
+        }
+
+        public  double CalcularArea()
+        {
+            double Area = (Largura * Altura);
             return Area;
         }
 
-        public static double CalcularPerimetro(Retangulo Retangulo)
+        public  double CalcularPerimetro()
         {
-            double Perimetro = 2 * (Retangulo.Largura + Retangulo.Altura);
+            double Perimetro = 2 * (Largura + Altura);
             return Perimetro;
         }
 
-        public static double CalcularDiagonal(Retangulo Retangulo)
+        public  double CalcularDiagonal()
         {
-            double Diagonal = Math.Sqrt(Math.Pow(Retangulo.Largura, 2) + Math.Pow(Retangulo.Altura, 2));
+            double Diagonal = Math.Sqrt(Math.Pow(Largura, 2) + Math.Pow(Altura, 2));
             return Diagonal;
+        }
+        public override string ToString()
+        {
+            string mensagem = $"Largura: {Largura}, Altura: {Altura}, Área: {CalcularArea()}, Perímetro: {CalcularPerimetro()}, Diagonal: {CalcularDiagonal():F2}";
+            return mensagem;
+
         }
 
     }
